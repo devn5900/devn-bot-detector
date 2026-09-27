@@ -1,0 +1,70 @@
+{
+  "name": "@devn/bot-detector-server",
+  "version": "0.1.0",
+  "description": "Framework-independent server-side behavioral risk engine and anti-bot validation",
+  "license": "MIT",
+  "author": "devn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devn5900/devn-bot-detector.git",
+    "directory": "packages/server"
+  },
+  "homepage": "https://github.com/devn5900/devn-bot-detector/tree/main/packages/server#readme",
+  "bugs": {
+    "url": "https://github.com/devn5900/devn-bot-detector/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "bot-detector",
+    "bot-detection",
+    "risk-engine",
+    "rate-limiting",
+    "anti-bot",
+    "redis",
+    "express",
+    "fastify",
+    "hono",
+    "nextjs",
+    "security"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@devn/bot-detector-core": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/node": "^22.17.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

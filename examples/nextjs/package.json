@@ -1,0 +1,11 @@
+{
+  "name": "@devn/example-nextjs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "dependencies": {
+    "@devn/bot-detector-client": "workspace:*",
+    "@devn/bot-detector-server": "workspace:*"
+  }
+}
+

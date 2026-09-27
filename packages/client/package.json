@@ -1,0 +1,64 @@
+{
+  "name": "@devn/bot-detector-client",
+  "version": "0.1.0",
+  "description": "Browser behavioral telemetry SDK for bot and automated risk detection",
+  "license": "MIT",
+  "author": "devn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devn5900/devn-bot-detector.git",
+    "directory": "packages/client"
+  },
+  "homepage": "https://github.com/devn5900/devn-bot-detector/tree/main/packages/client#readme",
+  "bugs": {
+    "url": "https://github.com/devn5900/devn-bot-detector/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "bot-detector",
+    "bot-detection",
+    "browser-telemetry",
+    "anti-bot",
+    "behavioral-biometrics",
+    "client-sdk",
+    "security"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "browser": "./dist/index.js",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "prepack": "pnpm run build"
+  },
+  "dependencies": {
+    "@devn/bot-detector-core": "workspace:^"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "bot-detector",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Framework-agnostic behavioral risk scoring SDK (client + server)",
+  "license": "MIT",
+  "author": "devn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devn5900/devn-bot-detector.git"
+  },
+  "homepage": "https://github.com/devn5900/devn-bot-detector#readme",
+  "bugs": {
+    "url": "https://github.com/devn5900/devn-bot-detector/issues"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "build": "pnpm -r --filter './packages/*' run build",
+    "test": "pnpm -r --filter './packages/*' run test",
+    "typecheck": "pnpm -r --filter './packages/*' run typecheck",
+    "lint": "pnpm -r --filter './packages/*' run lint",
+    "clean": "pnpm -r --filter './packages/*' run clean",
+    "check": "pnpm typecheck && pnpm test && pnpm build",
+    "publish:dry-run": "pnpm check && pnpm -r --filter './packages/*' publish --access public --dry-run --no-git-checks",
+    "publish:packages": "pnpm check && pnpm -r --filter './packages/*' publish --access public"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "tsup": "^8.5.0",
+    "vitest": "^3.2.4",
+    "@types/node": "^22.17.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

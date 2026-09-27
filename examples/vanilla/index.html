@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bot Detector — Vanilla Example</title>
+    <style>
+      body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+      button { padding: 0.6rem 1rem; cursor: pointer; }
+      pre { background: #f4f4f5; padding: 1rem; overflow: auto; }
+    </style>
+  </head>
+  <body>
+    <h1>Vanilla JS example</h1>
+    <p>Uses <code>@devn/bot-detector-client</code>. Point <code>endpoint</code> at your risk API.</p>
+    <button id="check">Run check()</button>
+    <pre id="out">Waiting…</pre>
+    <script type="module">
+      import { BotDetector } from '../../packages/client/dist/index.js'
+
+      const detector = new BotDetector({
+        siteKey: 'site_ok',
+        endpoint: 'http://localhost:8787',
+        autoStart: true,
+        failOpen: true,
+        debug: true,
+      })
+
+      document.getElementById('check').addEventListener('click', async () => {
+        const result = await detector.check()
+        document.getElementById('out').textContent = JSON.stringify(result, null, 2)
+      })
+    </script>
+  </body>
+</html>
