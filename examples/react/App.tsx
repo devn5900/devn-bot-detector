@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { BotDetector, type RiskResult } from '@devn/bot-detector-client'
+import { BotDetector, type RiskResult } from 'devn-bot-detector-client'
 
 export function RiskForm() {
   const detectorRef = useRef<BotDetector | null>(null)

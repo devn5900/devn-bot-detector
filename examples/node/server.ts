@@ -1,5 +1,5 @@
 /**
- * Minimal Node.js HTTP adapter for @devn/bot-detector-server
+ * Minimal Node.js HTTP adapter for devn-bot-detector-server
  *
  * POST /v1/session
  * POST /v1/analyze
@@ -16,7 +16,7 @@ import {
   MemorySessionStore,
   MemorySiteResolver,
   SITE_KEY_HEADER,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const detector = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET ?? 'dev-secret-change-me-16+',

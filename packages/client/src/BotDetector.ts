@@ -12,7 +12,7 @@ import {
   type CreateSessionResponse,
   type RiskResult,
   type Telemetry,
-} from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'
 import {
   FocusCollector,
   InteractionCollector,

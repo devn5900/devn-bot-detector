@@ -1,4 +1,4 @@
-import type { KeyboardSignals } from '@devn/bot-detector-core'
+import type { KeyboardSignals } from 'devn-bot-detector-core'
 import { IntervalTracker, isBrowser, perfNow } from '../utils'
 
 /**

@@ -1,4 +1,4 @@
-# @devn/bot-detector-core
+# devn-bot-detector-core
 
 Shared types, constants, validation, and protocol helpers.
 
@@ -7,7 +7,7 @@ Shared types, constants, validation, and protocol helpers.
 ## Install
 
 ```bash
-pnpm add @devn/bot-detector-core
+pnpm add devn-bot-detector-core
 ```
 
 ## Contents

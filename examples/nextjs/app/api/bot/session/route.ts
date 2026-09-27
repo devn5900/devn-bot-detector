@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { BotDetectorError, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectorError, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 import { serverDetector } from '../../../lib/bot-detector'
 
 export async function POST(req: Request) {

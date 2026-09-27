@@ -1,4 +1,4 @@
-import { SITE_KEY_HEADER, type ClientCredentialsMode } from '@devn/bot-detector-core'
+import { SITE_KEY_HEADER, type ClientCredentialsMode } from 'devn-bot-detector-core'
 
 export interface HttpTransportOptions {
   readonly baseUrl: string

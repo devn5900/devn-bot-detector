@@ -1,4 +1,4 @@
-import type { TouchSignals } from '@devn/bot-detector-core'
+import type { TouchSignals } from 'devn-bot-detector-core'
 import { IntervalTracker, isBrowser, perfNow } from '../utils'
 
 export class TouchCollector {

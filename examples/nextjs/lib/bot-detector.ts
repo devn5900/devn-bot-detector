@@ -3,7 +3,7 @@ import {
   MemorySessionStore,
   MemorySiteResolver,
   MemoryTokenRevocationStore,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 // In production, instantiate with RedisSessionStore and RedisRateLimiter
 export const serverDetector = new BotDetectionServer({

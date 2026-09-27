@@ -4,8 +4,8 @@ import type {
   RiskLevel,
   RiskReason,
   Telemetry,
-} from '@devn/bot-detector-core'
-import { clamp } from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'
+import { clamp } from 'devn-bot-detector-core'
 
 export interface RiskInput {
   readonly telemetry: Telemetry

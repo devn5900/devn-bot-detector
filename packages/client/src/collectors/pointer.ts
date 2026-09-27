@@ -1,4 +1,4 @@
-import type { PointerSignals } from '@devn/bot-detector-core'
+import type { PointerSignals } from 'devn-bot-detector-core'
 import { IntervalTracker, isBrowser, perfNow } from '../utils'
 
 const IDLE_GAP_MS = 1500

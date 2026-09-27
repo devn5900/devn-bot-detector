@@ -4,7 +4,7 @@ import type {
   SessionData,
   SiteInfo,
   TokenRevocationStore,
-} from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'
 
 export type { TokenRevocationStore }
 

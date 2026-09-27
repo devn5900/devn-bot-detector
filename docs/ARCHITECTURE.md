@@ -3,9 +3,9 @@
 ## Packages
 
 ```text
-@devn/bot-detector-core     types + validation (isomorphic)
-@devn/bot-detector-client   browser collectors + HTTP transport
-@devn/bot-detector-server   risk engine + sessions + tokens
+devn-bot-detector-core     types + validation (isomorphic)
+devn-bot-detector-client   browser collectors + HTTP transport
+devn-bot-detector-server   risk engine + sessions + tokens
 ```
 
 Dependency direction:

@@ -28,7 +28,7 @@ This guide provides end-to-end, copy-pasteable integration code for every major 
 
 ## Architectural Overview & Integration Patterns
 
-There are two primary ways to integrate `@devn/bot-detector`:
+There are two primary ways to integrate `devn-bot-detector`:
 
 ### Pattern A: Action-Gated Flow (Recommended for Forms & APIs)
 
@@ -64,7 +64,7 @@ Create a custom React hook `useBotDetector.ts`:
 ```tsx
 // src/hooks/useBotDetector.ts
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { BotDetector, type RiskResult, type CheckOptions } from '@devn/bot-detector-client'
+import { BotDetector, type RiskResult, type CheckOptions } from 'devn-bot-detector-client'
 
 export interface UseBotDetectorOptions {
   siteKey: string
@@ -196,7 +196,7 @@ import {
   MemorySessionStore,
   MemorySiteResolver,
   MemoryTokenRevocationStore,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 export const serverDetector = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,
@@ -226,7 +226,7 @@ export const serverDetector = new BotDetectionServer({
 ```ts
 // app/api/bot/session/route.ts
 import { NextResponse } from 'next/server'
-import { BotDetectorError, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectorError, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 import { serverDetector } from '@/lib/bot-detector'
 
 export async function POST(req: Request) {
@@ -256,7 +256,7 @@ export async function POST(req: Request) {
 ```ts
 // app/api/bot/analyze/route.ts
 import { NextResponse } from 'next/server'
-import { BotDetectorError, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectorError, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 import { serverDetector } from '@/lib/bot-detector'
 
 export async function POST(req: Request) {
@@ -322,7 +322,7 @@ Catch-all API Route `pages/api/bot/[...route].ts`:
 ```ts
 // pages/api/bot/[...route].ts
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { BotDetectorError, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectorError, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 import { serverDetector } from '@/lib/bot-detector'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -376,7 +376,7 @@ Create composable `src/composables/useBotDetector.ts`:
 ```ts
 // src/composables/useBotDetector.ts
 import { ref, onMounted, onUnmounted } from 'vue'
-import { BotDetector, type RiskResult, type CheckOptions } from '@devn/bot-detector-client'
+import { BotDetector, type RiskResult, type CheckOptions } from 'devn-bot-detector-client'
 
 export function useBotDetector(siteKey: string, endpoint = '/api/bot') {
   const detector = ref<BotDetector | null>(null)
@@ -466,7 +466,7 @@ Nuxt Server Route `server/api/bot/[...].ts`:
 
 ```ts
 // server/api/bot/[...].ts
-import { BotDetectionServer, BotDetectorError, MemorySessionStore, MemorySiteResolver, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectionServer, BotDetectorError, MemorySessionStore, MemorySiteResolver, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 
 const server = new BotDetectionServer({
   secret: useRuntimeConfig().botDetectorSecret,
@@ -519,7 +519,7 @@ Server endpoint `src/routes/api/bot/[route]/+server.ts`:
 // src/routes/api/bot/[route]/+server.ts
 import { json, error } from '@sveltejs/kit'
 import type { RequestHandler } from './$types'
-import { BotDetectorError, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectorError, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 import { serverDetector } from '$lib/server/bot'
 
 export const POST: RequestHandler = async ({ request, params, getClientAddress }) => {
@@ -559,7 +559,7 @@ Create an Injectable Service `bot-detector.service.ts`:
 ```ts
 // src/app/services/bot-detector.service.ts
 import { Injectable, OnDestroy } from '@angular/core'
-import { BotDetector, type RiskResult } from '@devn/bot-detector-client'
+import { BotDetector, type RiskResult } from 'devn-bot-detector-client'
 import { BehaviorSubject } from 'rxjs'
 
 @Injectable({ providedIn: 'root' })
@@ -669,7 +669,7 @@ import {
   MemorySiteResolver,
   MemoryTokenRevocationStore,
   createExpressBotDetector,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const server = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,
@@ -716,7 +716,7 @@ import {
   MemorySessionStore,
   MemorySiteResolver,
   SITE_KEY_HEADER,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const fastify = Fastify({ logger: true })
 
@@ -771,7 +771,7 @@ import {
   MemorySessionStore,
   MemorySiteResolver,
   SITE_KEY_HEADER,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const app = new Hono()
 
@@ -828,7 +828,7 @@ export default app
 // src/bot-detector/bot-detector.guard.ts
 import { Injectable, CanActivate, ExecutionContext, ForbiddenException, SetMetadata } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
-import { BotDetectionServer } from '@devn/bot-detector-server'
+import { BotDetectionServer } from 'devn-bot-detector-server'
 
 export const RISK_ACTION_KEY = 'riskAction'
 export const RequireRiskAction = (action: string) => SetMetadata(RISK_ACTION_KEY, action)
@@ -890,7 +890,7 @@ export class AuthController {
 ```ts
 // app/controllers/risk_controller.ts
 import type { HttpContext } from '@adonisjs/core/http'
-import { BotDetectionServer, BotDetectorError, MemorySessionStore, MemorySiteResolver, SITE_KEY_HEADER } from '@devn/bot-detector-server'
+import { BotDetectionServer, BotDetectorError, MemorySessionStore, MemorySiteResolver, SITE_KEY_HEADER } from 'devn-bot-detector-server'
 
 const server = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,

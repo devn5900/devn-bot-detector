@@ -1,5 +1,5 @@
-import type { ClientSession } from '@devn/bot-detector-core'
-import { DEFAULT_SESSION_DURATION_MS } from '@devn/bot-detector-core'
+import type { ClientSession } from 'devn-bot-detector-core'
+import { DEFAULT_SESSION_DURATION_MS } from 'devn-bot-detector-core'
 import { nowMs, secureId } from './utils'
 
 export function createLocalSession(sessionDurationMs = DEFAULT_SESSION_DURATION_MS): ClientSession {

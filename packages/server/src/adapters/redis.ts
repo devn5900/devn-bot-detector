@@ -1,4 +1,4 @@
-import type { RateLimitResult, SessionData, TokenRevocationStore } from '@devn/bot-detector-core'
+import type { RateLimitResult, SessionData, TokenRevocationStore } from 'devn-bot-detector-core'
 import type { RateLimiter, RedisLikeClient, SessionStore } from '../interfaces'
 
 export interface RedisSessionStoreOptions {

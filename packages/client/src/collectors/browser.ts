@@ -1,4 +1,4 @@
-import type { BrowserSignals } from '@devn/bot-detector-core'
+import type { BrowserSignals } from 'devn-bot-detector-core'
 import { isBrowser } from '../utils'
 
 function getWebglInfo(): { renderer: string | null; vendor: string | null } {

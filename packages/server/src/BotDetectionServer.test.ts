@@ -6,7 +6,7 @@ import {
   MemorySiteResolver,
   TokenManager,
 } from './index'
-import { BotDetectorError } from '@devn/bot-detector-core'
+import { BotDetectorError } from 'devn-bot-detector-core'
 
 const SECRET = 'test-secret-key-32chars-minimum!'
 

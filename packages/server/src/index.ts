@@ -46,6 +46,6 @@ export type {
   RiskDecision,
   RiskTokenPayload,
   VerifyRiskTokenOptions,
-} from '@devn/bot-detector-core'
-export { BotDetectorError, SITE_KEY_HEADER, API_PATHS } from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'
+export { BotDetectorError, SITE_KEY_HEADER, API_PATHS } from 'devn-bot-detector-core'
 

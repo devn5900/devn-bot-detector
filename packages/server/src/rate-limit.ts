@@ -1,4 +1,4 @@
-import type { RateLimitResult } from '@devn/bot-detector-core'
+import type { RateLimitResult } from 'devn-bot-detector-core'
 import type { RateLimiter } from './interfaces'
 
 interface Bucket {

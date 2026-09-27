@@ -31,10 +31,10 @@ importers:
 
   examples/nextjs:
     dependencies:
-      '@devn/bot-detector-client':
+      devn-bot-detector-client:
         specifier: workspace:*
         version: link:../../packages/client
-      '@devn/bot-detector-server':
+      devn-bot-detector-server:
         specifier: workspace:*
         version: link:../../packages/server
 
@@ -48,7 +48,7 @@ importers:
 
   packages/client:
     dependencies:
-      '@devn/bot-detector-core':
+      devn-bot-detector-core:
         specifier: workspace:^
         version: link:../core
     devDependencies:
@@ -79,7 +79,7 @@ importers:
 
   packages/server:
     dependencies:
-      '@devn/bot-detector-core':
+      devn-bot-detector-core:
         specifier: workspace:^
         version: link:../core
     devDependencies:

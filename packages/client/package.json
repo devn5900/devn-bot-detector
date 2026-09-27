@@ -1,5 +1,5 @@
 {
-  "name": "@devn/bot-detector-client",
+  "name": "devn-bot-detector-client",
   "version": "0.1.0",
   "description": "Browser behavioral telemetry SDK for bot and automated risk detection",
   "license": "MIT",
@@ -53,7 +53,7 @@
     "prepack": "pnpm run build"
   },
   "dependencies": {
-    "@devn/bot-detector-core": "workspace:^"
+    "devn-bot-detector-core": "workspace:^"
   },
   "devDependencies": {
     "jsdom": "^26.1.0",

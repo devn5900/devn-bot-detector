@@ -1,4 +1,4 @@
-import type { FocusSignals } from '@devn/bot-detector-core'
+import type { FocusSignals } from 'devn-bot-detector-core'
 import { isBrowser } from '../utils'
 
 export class FocusCollector {

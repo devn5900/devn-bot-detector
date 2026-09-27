@@ -1,4 +1,4 @@
-import type { ScrollSignals } from '@devn/bot-detector-core'
+import type { ScrollSignals } from 'devn-bot-detector-core'
 import { IntervalTracker, isBrowser, perfNow } from '../utils'
 
 export class ScrollCollector {

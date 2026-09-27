@@ -7,7 +7,7 @@ import { ScrollCollector } from './collectors/scroll'
 import { FocusCollector } from './collectors/focus'
 import { VisibilityCollector } from './collectors/visibility'
 import { createLocalSession, isSessionExpired } from './session'
-import { utf8ByteLength } from '@devn/bot-detector-core'
+import { utf8ByteLength } from 'devn-bot-detector-core'
 
 describe('session', () => {
   it('generates secure session and nonce ids', () => {

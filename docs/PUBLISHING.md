@@ -1,6 +1,6 @@
 # Publishing to npm
 
-This guide describes how to publish `@devn/bot-detector` packages (`@devn/bot-detector-core`, `@devn/bot-detector-client`, and `@devn/bot-detector-server`) to the npm registry.
+This guide describes how to publish `devn-bot-detector` packages (`devn-bot-detector-core`, `devn-bot-detector-client`, and `devn-bot-detector-server`) to the npm registry.
 
 ---
 
@@ -10,14 +10,14 @@ The monorepo is configured using **pnpm workspaces** with automated build-before
 
 | Package | Role | npm Registry Target |
 | :--- | :--- | :--- |
-| [`@devn/bot-detector-core`](../packages/core) | Shared types, validation, error definitions | `https://registry.npmjs.org/@devn/bot-detector-core` |
-| [`@devn/bot-detector-client`](../packages/client) | Browser behavioral telemetry SDK | `https://registry.npmjs.org/@devn/bot-detector-client` |
-| [`@devn/bot-detector-server`](../packages/server) | Server risk engine & framework adapters | `https://registry.npmjs.org/@devn/bot-detector-server` |
+| [`devn-bot-detector-core`](../packages/core) | Shared types, validation, error definitions | `https://registry.npmjs.org/devn-bot-detector-core` |
+| [`devn-bot-detector-client`](../packages/client) | Browser behavioral telemetry SDK | `https://registry.npmjs.org/devn-bot-detector-client` |
+| [`devn-bot-detector-server`](../packages/server) | Server risk engine & framework adapters | `https://registry.npmjs.org/devn-bot-detector-server` |
 
 ### Key Package Settings
 
 - **Public Access**: Each package defines `"publishConfig": { "access": "public" }` in its `package.json` so scoped packages publish publicly without requiring paid private organizations.
-- **Dynamic Semver Linking**: Client and server depend on `@devn/bot-detector-core: "workspace:^"`. When publishing, pnpm converts `workspace:^` into standard semver ranges (e.g., `^0.1.0`).
+- **Dynamic Semver Linking**: Client and server depend on `devn-bot-detector-core: "workspace:^"`. When publishing, pnpm converts `workspace:^` into standard semver ranges (e.g., `^0.1.0`).
 - **Guaranteed Build Freshness**: Every package contains `"prepack": "pnpm run build"`, ensuring bundles and `.d.ts` declaration maps are compiled immediately prior to packing.
 - **Tarball Whitelist**: Packaged files are restricted to `dist/`, `README.md`, and `LICENSE`.
 
@@ -25,11 +25,9 @@ The monorepo is configured using **pnpm workspaces** with automated build-before
 
 ## 2. Prerequisites
 
-### A. npm Account & Scope Access
-1. Create or log in to your account at [npmjs.com](https://www.npmjs.com/).
-2. If publishing under the `@devn` scope:
-   - Ensure the `@devn` organization exists on npm and your user has **Admin** or **Publish** rights, or
-   - If `@devn` is your username, scoped packages can be published directly.
+### A. npm Account
+1. Log in to your npm account at [npmjs.com](https://www.npmjs.com/).
+2. Because packages are unscoped (`devn-bot-detector-*`), they do not require an organization or scope and can be published directly from your verified account (`devnmishra`).
 
 ### B. Local Authentication
 Log in via the npm CLI in your terminal:
@@ -113,7 +111,7 @@ A GitHub Actions workflow is provided at [`.github/workflows/publish.yml`](../.g
 1. Go to your GitHub repository **Settings → Secrets and variables → Actions**.
 2. Click **New repository secret**.
 3. Name: `NPM_TOKEN`.
-4. Value: An npm Access Token (type: **Automation** or **Granular Access Token** with *Read and Write* packages permission for `@devn/*`).
+4. Value: An npm Access Token (type: **Automation** or **Granular Access Token** with *Read and Write* packages permission for `devn-*`).
 
 ### Triggering Releases
 - **Automatic**: Create and publish a GitHub Release tagged `v*` (e.g. `v0.1.0`).

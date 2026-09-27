@@ -1,5 +1,5 @@
 import { randomBytes } from 'node:crypto'
-import type { SessionData, SiteInfo } from '@devn/bot-detector-core'
+import type { SessionData, SiteInfo } from 'devn-bot-detector-core'
 import type { SessionStore, SiteResolver, TokenRevocationStore } from './interfaces'
 
 export function secureId(prefix: string, bytes = 16): string {

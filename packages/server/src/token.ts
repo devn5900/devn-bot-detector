@@ -1,5 +1,5 @@
 import { createHmac, timingSafeEqual } from 'node:crypto'
-import type { RiskDecision, RiskTokenPayload, VerifyRiskTokenOptions } from '@devn/bot-detector-core'
+import type { RiskDecision, RiskTokenPayload, VerifyRiskTokenOptions } from 'devn-bot-detector-core'
 
 function b64url(input: Buffer | string): string {
   const buf = typeof input === 'string' ? Buffer.from(input, 'utf8') : input

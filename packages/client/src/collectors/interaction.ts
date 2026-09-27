@@ -1,4 +1,4 @@
-import type { InteractionSignals } from '@devn/bot-detector-core'
+import type { InteractionSignals } from 'devn-bot-detector-core'
 import { isBrowser, nowMs } from '../utils'
 
 export class InteractionCollector {

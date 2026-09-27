@@ -1,4 +1,4 @@
-# @devn/bot-detector-server
+# devn-bot-detector-server
 
 Framework-independent behavioral risk engine for Node.js and any HTTP framework.
 
@@ -7,7 +7,7 @@ Framework-independent behavioral risk engine for Node.js and any HTTP framework.
 ## Install
 
 ```bash
-pnpm add @devn/bot-detector-server
+pnpm add devn-bot-detector-server
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ import {
   BotDetectionServer,
   MemorySiteResolver,
   MemorySessionStore,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const detector = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,

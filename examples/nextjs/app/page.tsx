@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, useTransition } from 'react'
-import { BotDetector, type RiskResult } from '@devn/bot-detector-client'
+import { BotDetector, type RiskResult } from 'devn-bot-detector-client'
 import { loginAction } from './actions'
 
 export function useBotDetector() {

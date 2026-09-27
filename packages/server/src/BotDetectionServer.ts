@@ -23,7 +23,7 @@ import {
   type SiteInfo,
   type TokenRevocationStore,
   type VerifyRiskTokenOptions,
-} from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'
 import type { EventSink, RateLimiter, SessionStore, SiteResolver } from './interfaces'
 import { MemorySessionStore, MemorySiteResolver, secureId } from './memory'
 import { MemoryRateLimiter } from './rate-limit'

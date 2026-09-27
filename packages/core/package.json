@@ -1,5 +1,5 @@
 {
-  "name": "@devn/bot-detector-core",
+  "name": "devn-bot-detector-core",
   "version": "0.1.0",
   "description": "Shared types, constants, and validation for bot-detector SDK",
   "license": "MIT",

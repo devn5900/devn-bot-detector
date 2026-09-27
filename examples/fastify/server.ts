@@ -8,7 +8,7 @@ import {
   MemorySessionStore,
   MemorySiteResolver,
   SITE_KEY_HEADER,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const detector = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,

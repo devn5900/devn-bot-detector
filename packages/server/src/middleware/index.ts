@@ -3,7 +3,7 @@ import {
   SITE_KEY_HEADER,
   type RiskTokenPayload,
   type VerifyRiskTokenOptions,
-} from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'
 import type { BotDetectionServer } from '../BotDetectionServer'
 
 export interface FrameworkRequestLike {

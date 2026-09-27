@@ -1,4 +1,4 @@
-import type { VisibilitySignals } from '@devn/bot-detector-core'
+import type { VisibilitySignals } from 'devn-bot-detector-core'
 import { isBrowser, nowMs } from '../utils'
 
 export class VisibilityCollector {

@@ -1,6 +1,6 @@
 # Advanced Options & Configuration Guide
 
-`@devn/bot-detector` provides enterprise-grade flexibility for modern bot prevention and behavioral risk scoring. This guide covers all advanced client and server configuration options.
+`devn-bot-detector` provides enterprise-grade flexibility for modern bot prevention and behavioral risk scoring. This guide covers all advanced client and server configuration options.
 
 ---
 
@@ -35,7 +35,7 @@
 If your backend routes require CSRF tokens, Bearer tokens, or tenant headers, pass them via the `headers` option. `headers` accepts either a static object or an async function evaluated on every HTTP call:
 
 ```ts
-import { BotDetector } from '@devn/bot-detector-client'
+import { BotDetector } from 'devn-bot-detector-client'
 
 const detector = new BotDetector({
   siteKey: 'site_public_prod',
@@ -133,7 +133,7 @@ const detector = new BotDetector({
 Not all endpoints should share the same risk tolerance. A public blog search can have relaxed thresholds, whereas a withdrawal or password reset requires strict scoring:
 
 ```ts
-import { BotDetectionServer } from '@devn/bot-detector-server'
+import { BotDetectionServer } from 'devn-bot-detector-server'
 
 const server = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,
@@ -185,7 +185,7 @@ To prevent an attacker from completing behavioral telemetry on one endpoint and 
 
 ```ts
 // 1. Configure server with a TokenRevocationStore (e.g. Memory or Redis)
-import { BotDetectionServer, RedisTokenRevocationStore } from '@devn/bot-detector-server'
+import { BotDetectionServer, RedisTokenRevocationStore } from 'devn-bot-detector-server'
 
 const server = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!,
@@ -304,7 +304,7 @@ import {
   RedisSessionStore,
   RedisRateLimiter,
   RedisTokenRevocationStore,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const redis = new Redis(process.env.REDIS_URL!)
 
@@ -330,7 +330,7 @@ export const server = new BotDetectionServer({
 Rather than hard-coding domains, implement `SiteResolver` to dynamically resolve tenant configuration from your primary database:
 
 ```ts
-import { BotDetectionServer, type SiteResolver, type SiteInfo } from '@devn/bot-detector-server'
+import { BotDetectionServer, type SiteResolver, type SiteInfo } from 'devn-bot-detector-server'
 import { db } from './db'
 
 class DatabaseSiteResolver implements SiteResolver {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { BotDetector, type RiskResult } from '@devn/bot-detector-client'
+import { BotDetector, type RiskResult } from 'devn-bot-detector-client'
 
 const result = ref<RiskResult | null>(null)
 const detector = new BotDetector({

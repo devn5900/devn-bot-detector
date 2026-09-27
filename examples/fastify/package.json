@@ -1,5 +1,5 @@
 {
-  "name": "@devn/example-fastify",
+  "name": "devn-example-fastify",
   "private": true,
   "version": "0.0.0",
   "type": "module"

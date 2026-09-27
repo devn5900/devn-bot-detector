@@ -1,17 +1,17 @@
-# @devn/bot-detector-client
+# devn-bot-detector-client
 
 Browser SDK that collects **aggregated, privacy-safe** interaction telemetry and requests a risk score from your backend.
 
 ## Install
 
 ```bash
-pnpm add @devn/bot-detector-client
+pnpm add devn-bot-detector-client
 ```
 
 ## Usage
 
 ```ts
-import { BotDetector } from '@devn/bot-detector-client'
+import { BotDetector } from 'devn-bot-detector-client'
 
 const detector = new BotDetector({
   siteKey: 'site_public_xxx',

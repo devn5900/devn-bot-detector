@@ -1,8 +1,8 @@
-# @devn/bot-detector
+# devn-bot-detector
 
 Framework-agnostic **behavioral risk scoring** SDK.
 
-Browser clients collect privacy-safe interaction telemetry. Your backend analyzes it with `@devn/bot-detector-server` and returns a structured risk result. Your application decides whether to allow, monitor, challenge, or block.
+Browser clients collect privacy-safe interaction telemetry. Your backend analyzes it with `devn-bot-detector-server` and returns a structured risk result. Your application decides whether to allow, monitor, challenge, or block.
 
 ## What it is
 
@@ -21,10 +21,10 @@ Browser clients collect privacy-safe interaction telemetry. Your backend analyze
 
 ```text
 Browser                         Consumer Backend
-@devn/bot-detector-client  →  your HTTP routes
+devn-bot-detector-client  →  your HTTP routes
         │                              │
         │ telemetry                    ▼
-        │                    @devn/bot-detector-server
+        │                    devn-bot-detector-server
         │                              │
         │                    SiteResolver / SessionStore
         │                    RateLimiter / RiskEngine
@@ -37,21 +37,21 @@ Browser                         Consumer Backend
 
 | Package | Role |
 |---------|------|
-| `@devn/bot-detector-core` | Shared types, validation, constants |
-| `@devn/bot-detector-client` | Browser telemetry SDK |
-| `@devn/bot-detector-server` | Server risk engine (framework-independent) |
+| `devn-bot-detector-core` | Shared types, validation, constants |
+| `devn-bot-detector-client` | Browser telemetry SDK |
+| `devn-bot-detector-server` | Server risk engine (framework-independent) |
 
 ## Install
 
 ```bash
-pnpm add @devn/bot-detector-client
-pnpm add @devn/bot-detector-server
+pnpm add devn-bot-detector-client
+pnpm add devn-bot-detector-server
 ```
 
 ## Client usage
 
 ```ts
-import { BotDetector } from '@devn/bot-detector-client'
+import { BotDetector } from 'devn-bot-detector-client'
 
 const detector = new BotDetector({
   siteKey: 'site_public_xxx', // PUBLIC
@@ -75,7 +75,7 @@ import {
   BotDetectionServer,
   MemorySiteResolver,
   MemorySessionStore,
-} from '@devn/bot-detector-server'
+} from 'devn-bot-detector-server'
 
 const detector = new BotDetectionServer({
   secret: process.env.BOT_DETECTOR_SECRET!, // PRIVATE — never ship to browsers
@@ -150,9 +150,9 @@ pnpm typecheck
 ```
 
 ```bash
-pnpm --filter @devn/bot-detector-core build
-pnpm --filter @devn/bot-detector-client build
-pnpm --filter @devn/bot-detector-server build
+pnpm --filter devn-bot-detector-core build
+pnpm --filter devn-bot-detector-client build
+pnpm --filter devn-bot-detector-server build
 ```
 
 ## Documentation

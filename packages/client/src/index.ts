@@ -18,4 +18,4 @@ export type {
   Telemetry,
   ClientSession,
   CheckOptions,
-} from '@devn/bot-detector-core'
+} from 'devn-bot-detector-core'

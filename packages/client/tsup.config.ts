@@ -9,5 +9,5 @@ export default defineConfig({
   treeshake: true,
   target: 'es2020',
   platform: 'browser',
-  external: ['@devn/bot-detector-core'],
+  external: ['devn-bot-detector-core'],
 })
